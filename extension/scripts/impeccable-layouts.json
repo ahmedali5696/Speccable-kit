@@ -1,0 +1,10 @@
+{
+  "order": [
+    ".agent/skills/impeccable",
+    ".agents/skills/impeccable",
+    ".claude/skills/impeccable"
+  ],
+  "detectorEntryPoint": "scripts/detect.mjs",
+  "skillFile": "SKILL.md",
+  "_comment": "Single authoritative source for Impeccable capability discovery. Both check-compat.ps1 and validate-detector.mjs read this file so they can never disagree about where Impeccable lives or which installation is preferred. Order is deterministic preference (first match wins). These are the documented public filesystem layouts shipped by Impeccable's own installers for the supported coding tools."
+}
