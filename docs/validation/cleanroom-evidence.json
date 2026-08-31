@@ -1,0 +1,216 @@
+{
+  "install": {
+    "scripts": [
+      "check-compat.ps1",
+      "impeccable-layouts.json",
+      "ui-impact.ps1",
+      "validate-detector.mjs"
+    ],
+    "skills": [
+      "speckit-speccable-ui-design",
+      "speckit-speccable-ui-gate",
+      "speckit-speccable-ui-validate"
+    ]
+  },
+  "missing": {
+    "compat": {
+      "IMPECCABLE": "missing",
+      "VERSION": "unknown",
+      "DETECTOR": "missing",
+      "SUPPORTED": "missing",
+      "LAYOUT": "none"
+    },
+    "validator": {
+      "status": "NOT_RUN",
+      "reason": "exec-unavailable",
+      "layout": "none",
+      "DEGRADED": 0,
+      "primaryFindingsCount": 0
+    }
+  },
+  "agent-supported": {
+    "compat": {
+      "IMPECCABLE": "present",
+      "VERSION": "4.1.1",
+      "DETECTOR": "present",
+      "SUPPORTED": "supported",
+      "LAYOUT": ".agent/skills/impeccable"
+    },
+    "validator": {
+      "status": "PASS",
+      "reason": "clean",
+      "layout": ".agent/skills/impeccable",
+      "DEGRADED": 0,
+      "primaryFindingsCount": 0
+    }
+  },
+  "agents-supported": {
+    "compat": {
+      "IMPECCABLE": "present",
+      "VERSION": "4.1.1",
+      "DETECTOR": "present",
+      "SUPPORTED": "supported",
+      "LAYOUT": ".agents/skills/impeccable"
+    },
+    "validator": {
+      "status": "PASS",
+      "reason": "clean",
+      "layout": ".agents/skills/impeccable",
+      "DEGRADED": 0,
+      "primaryFindingsCount": 0
+    }
+  },
+  "claude-supported": {
+    "compat": {
+      "IMPECCABLE": "present",
+      "VERSION": "4.1.1",
+      "DETECTOR": "present",
+      "SUPPORTED": "supported",
+      "LAYOUT": ".claude/skills/impeccable"
+    },
+    "validator": {
+      "status": "PASS",
+      "reason": "clean",
+      "layout": ".claude/skills/impeccable",
+      "DEGRADED": 0,
+      "primaryFindingsCount": 0
+    }
+  },
+  "claude-unsupported-major": {
+    "compat": {
+      "IMPECCABLE": "present",
+      "VERSION": "5.0.0",
+      "DETECTOR": "present",
+      "SUPPORTED": "unsupported",
+      "LAYOUT": ".claude/skills/impeccable"
+    },
+    "validator": {
+      "status": "PASS",
+      "reason": "clean",
+      "layout": ".claude/skills/impeccable",
+      "DEGRADED": 0,
+      "primaryFindingsCount": 0
+    }
+  },
+  "claude-malformed-version": {
+    "compat": {
+      "IMPECCABLE": "present",
+      "VERSION": "nonsense",
+      "DETECTOR": "present",
+      "SUPPORTED": "unsupported",
+      "LAYOUT": ".claude/skills/impeccable"
+    },
+    "validator": {
+      "status": "PASS",
+      "reason": "clean",
+      "layout": ".claude/skills/impeccable",
+      "DEGRADED": 0,
+      "primaryFindingsCount": 0
+    }
+  },
+  "claude-no-detector": {
+    "compat": {
+      "IMPECCABLE": "present",
+      "VERSION": "4.1.1",
+      "DETECTOR": "missing",
+      "SUPPORTED": "supported",
+      "LAYOUT": ".claude/skills/impeccable"
+    },
+    "validator": {
+      "status": "NOT_RUN",
+      "reason": "exec-unavailable",
+      "layout": ".claude/skills/impeccable",
+      "DEGRADED": 0,
+      "primaryFindingsCount": 0
+    }
+  },
+  "agent-preferred-over-claude": {
+    "compat": {
+      "IMPECCABLE": "present",
+      "VERSION": "4.1.1",
+      "DETECTOR": "present",
+      "SUPPORTED": "supported",
+      "LAYOUT": ".agent/skills/impeccable"
+    },
+    "validator": {
+      "status": "PASS",
+      "reason": "clean",
+      "layout": ".agent/skills/impeccable",
+      "DEGRADED": 0,
+      "primaryFindingsCount": 0
+    }
+  },
+  "detector_modes": {
+    "clean": {
+      "status": "PASS",
+      "reason": "clean",
+      "findingsCount": 0,
+      "primaryFindingsCount": 0,
+      "advisoryOnly": false,
+      "degraded": 0,
+      "degradedNotice": "",
+      "layout": ".claude/skills/impeccable",
+      "detectorPath": "C:\\Users\\AHMEDA~1\\AppData\\Local\\Temp\\tmpgyhwe4ht\\.claude\\skills\\impeccable\\scripts\\detect.mjs",
+      "DEGRADED": 0
+    },
+    "findings": {
+      "status": "FAIL",
+      "reason": "findings",
+      "findingsCount": 1,
+      "primaryFindingsCount": 1,
+      "advisoryOnly": false,
+      "degraded": 0,
+      "degradedNotice": "",
+      "layout": ".claude/skills/impeccable",
+      "detectorPath": "C:\\Users\\AHMEDA~1\\AppData\\Local\\Temp\\tmpgyhwe4ht\\.claude\\skills\\impeccable\\scripts\\detect.mjs",
+      "DEGRADED": 0
+    },
+    "advisory": {
+      "status": "PASS",
+      "reason": "clean",
+      "findingsCount": 1,
+      "primaryFindingsCount": 0,
+      "advisoryOnly": true,
+      "degraded": 0,
+      "degradedNotice": "",
+      "layout": ".claude/skills/impeccable",
+      "detectorPath": "C:\\Users\\AHMEDA~1\\AppData\\Local\\Temp\\tmpgyhwe4ht\\.claude\\skills\\impeccable\\scripts\\detect.mjs",
+      "DEGRADED": 0
+    },
+    "malformed": {
+      "status": "NOT_RUN",
+      "reason": "malformed-output",
+      "findingsCount": 0,
+      "advisoryOnly": false,
+      "degraded": 0,
+      "degradedNotice": "",
+      "layout": ".claude/skills/impeccable",
+      "detectorPath": "C:\\Users\\AHMEDA~1\\AppData\\Local\\Temp\\tmpgyhwe4ht\\.claude\\skills\\impeccable\\scripts\\detect.mjs",
+      "DEGRADED": 0
+    },
+    "degraded": {
+      "status": "PASS",
+      "reason": "clean",
+      "findingsCount": 0,
+      "primaryFindingsCount": 0,
+      "advisoryOnly": false,
+      "degraded": 1,
+      "degradedNotice": "HTML parser modules unavailable - findings are an undercount",
+      "layout": ".claude/skills/impeccable",
+      "detectorPath": "C:\\Users\\AHMEDA~1\\AppData\\Local\\Temp\\tmpgyhwe4ht\\.claude\\skills\\impeccable\\scripts\\detect.mjs",
+      "DEGRADED": 1
+    },
+    "timeout": {
+      "status": "NOT_RUN",
+      "reason": "timeout",
+      "findingsCount": 0,
+      "primaryFindingsCount": 0,
+      "advisoryOnly": false,
+      "degraded": 0,
+      "degradedNotice": "",
+      "layout": ".claude/skills/impeccable",
+      "detectorPath": "C:\\Users\\AHMEDA~1\\AppData\\Local\\Temp\\tmpgyhwe4ht\\.claude\\skills\\impeccable\\scripts\\detect.mjs",
+      "DEGRADED": 0
+    }
+  }
+}

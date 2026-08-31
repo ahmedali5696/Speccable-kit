@@ -1,0 +1,53 @@
+schema_version: "1.0"
+
+extension:
+  id: speccable
+  name: "Speccable-kit"
+  version: "1.0.0"
+  description: "Conditionally integrates Impeccable design into the native Spec Kit workflow via a UI Impact gate, design orchestration, and deterministic validation."
+  category: "workflow"
+  effect: "read-write"
+  license: "MIT"
+
+requires:
+  speckit_version: ">=1.0.1"
+
+provides:
+  commands:
+    - name: speckit.speccable.ui-gate
+      file: commands/speckit.speccable.ui-gate.md
+      description: "Read the spec's UI Impact value, preserve valid human-authored classification, classify missing/invalid values, and route the workflow (native Spec Kit vs Impeccable design)."
+    - name: speckit.speccable.ui-design
+      file: commands/speckit.speccable.ui-design.md
+      description: "Orchestrate the Impeccable design workflow for a UI-impacting feature (design source of truth before planning)."
+    - name: speckit.speccable.ui-validate
+      file: commands/speckit.speccable.ui-validate.md
+      description: "Run deterministic detector validation, parse output tolerantly, report explicit validation status, and surface actionable findings into tasks.md."
+
+  scripts:
+    - name: ui-impact
+      file: scripts/ui-impact.ps1
+      description: "Read or classify the UI Impact value from spec.md."
+    - name: check-compat
+      file: scripts/check-compat.ps1
+      description: "Report availability, version, and supported-range verdict for the Impeccable skill and detector (shared layout resolver)."
+    - name: validate-detector
+      file: scripts/validate-detector.mjs
+      description: "Executable deterministic validator: runs the detector, parses findings tolerantly, reports PASS/FAIL/NOT_RUN (+DEGRADED), and inserts deduplicated follow-ups into tasks.md. Single source of truth for validation behavior."
+    - name: impeccable-layouts
+      file: scripts/impeccable-layouts.json
+      description: "Shared data file defining the documented Impeccable installation layouts and deterministic discovery order; read by both check-compat and the validator so they never disagree."
+
+hooks:
+  after_specify:
+    command: speckit.speccable.ui-gate
+    optional: true
+    description: "Eager early classification for ergonomics (never authoritative)."
+  before_plan:
+    command: speckit.speccable.ui-gate
+    optional: false
+    description: "Authoritative UI Impact gate enforcing the design source-of-truth before planning."
+  after_implement:
+    command: speckit.speccable.ui-validate
+    optional: false
+    description: "Mandatory deterministic validation after implementation."
